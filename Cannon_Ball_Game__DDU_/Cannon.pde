@@ -17,3 +17,10 @@ class Cannon {
       println("Move Up!!" + (-PI/2+angle));
     }
   }
+  
+  //Fires CannonBalls from the Cannon
+  void fire() {
+    ellipse(0,0,10,10);
+    println("Shots Fired!");
+  }
+  
