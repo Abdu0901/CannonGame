@@ -24,3 +24,11 @@ void draw() {
 
   if (keyPressed)detectKey();
 }
+
+
+void drawBackGround() {
+  background(130, 210, 230);
+  fill(65, 250, 85);
+  noStroke();
+  rect(0, 450, 1000, 50);
+}
