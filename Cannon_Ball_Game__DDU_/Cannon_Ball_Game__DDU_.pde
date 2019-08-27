@@ -11,3 +11,9 @@ void setup() {
 void shoot() {
   CannonBall[] cannonBalls = new CannonBall[10];
 }
+
+void detectKey() {
+  if (key == 's')cannon.moveDown();
+  if (key == 'w')cannon.moveUp();
+  if (key == ' ')cannon.fire();
+}
