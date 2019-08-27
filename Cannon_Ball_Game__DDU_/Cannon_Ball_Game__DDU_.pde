@@ -17,3 +17,10 @@ void detectKey() {
   if (key == 'w')cannon.moveUp();
   if (key == ' ')cannon.fire();
 }
+
+void draw() {
+  drawBackGround();
+  cannon.drawCannon();
+
+  if (keyPressed)detectKey();
+}
