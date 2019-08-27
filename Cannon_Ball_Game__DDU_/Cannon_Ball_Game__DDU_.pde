@@ -7,3 +7,7 @@ void setup() {
   size(1000, 500);
   frameRate(60);
 }
+
+void shoot() {
+  CannonBall[] cannonBalls = new CannonBall[10];
+}
