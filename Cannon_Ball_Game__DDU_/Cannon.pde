@@ -20,7 +20,7 @@ class Cannon {
 
   //Fires CannonBalls from the Cannon
   void fire() {
-    ellipse(0, 0, 10, 10);
+    rect(0, 0, 10, 10);
     println("Shots Fired!");
   }
 
