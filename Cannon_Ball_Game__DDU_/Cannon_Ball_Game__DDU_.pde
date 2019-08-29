@@ -15,7 +15,7 @@ void shoot() {
 void detectKey() {
   if (key == 's')cannon.moveDown();
   if (key == 'w')cannon.moveUp();
-  if (key == ' ')cannon.fire();
+  if (key == ' ')cannon.fire(); 
 }
 
 void draw() {

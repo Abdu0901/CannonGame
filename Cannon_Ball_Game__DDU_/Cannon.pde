@@ -24,8 +24,9 @@ class Cannon {
     println("Shots Fired!");
   }
 
+  //Draws Cannon
   void drawCannon() {
-    //Cannon Shaft
+    //Cannon Barrel
     fill(200, 0, 0);
     pushMatrix();
     translate(30, 440);
@@ -33,10 +34,10 @@ class Cannon {
     rect(0, -7, 50, 15);
     popMatrix();
 
+    //Base of the Cannon
     pushMatrix();
     translate(30, 440);
     fill(100);
-    //Base of the Cannon
     arc(0, 10, 50, 50, PI, PI*2);
     popMatrix();
 
