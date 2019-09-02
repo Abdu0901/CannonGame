@@ -1,6 +1,7 @@
 //Cannon Game
-public float angle;
+public float angle = -PI/4, force = 5;
 int c, e;
+int state = 0;
 boolean canSpawn = true;
 
 Cannon cannon = new Cannon();
@@ -25,12 +26,8 @@ void draw() {
   for(CannonBall a : cannonBalls){
     a.update();
   }
-  if(e <= 5 && canSpawn == true){
+  if(c <= 5 && canSpawn == true){
     cannonBalls.add(new CannonBall());
-  }
-  
-  if(e >= 5){
-   canSpawn = false; 
   }
   
   if (keyPressed)detectKey();

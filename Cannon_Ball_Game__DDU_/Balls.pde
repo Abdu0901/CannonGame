@@ -4,7 +4,7 @@ class CannonBall{
   float angle = PI/4;
   
   CannonBall(){
-    
+    //ballPos.x = 
   }
   
   void update(){

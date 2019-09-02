@@ -1,6 +1,6 @@
 class Cannon {
   //Angle of Cannon Barrel
-  float angle = PI/4;
+  float angle;
 
   //Moves Cannon Barrel Down
   void moveDown() {
