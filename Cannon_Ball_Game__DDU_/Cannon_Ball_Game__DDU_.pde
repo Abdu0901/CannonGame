@@ -16,20 +16,20 @@ void setup() {
 void detectKey() {
   if (key == 's')cannon.moveDown();
   if (key == 'w')cannon.moveUp();
-  if (key == ' ')cannon.fire(); 
+  if (key == ' ')cannon.fire();
 }
 
 void draw() {
   drawBackGround();
   c = cannonBalls.size();
   cannon.drawCannon();
-  for(CannonBall a : cannonBalls){
+  for (CannonBall a : cannonBalls) {
     a.update();
   }
-  if(c <= 5 && canSpawn == true){
+  if (c <= 5 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
-  
+
   if (keyPressed)detectKey();
 }
 
