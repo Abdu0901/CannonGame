@@ -2,11 +2,12 @@
 public float angle = -PI/4, force = 5;
 int c, e;
 int state = 0;
-boolean canSpawn = true;
+boolean canSpawn = true, canShoot = true;
 
 Cannon cannon = new Cannon();
 ArrayList<CannonBall> cannonBalls = new ArrayList<CannonBall>(10);
 //CannonBall[] cannonBalls = new CannonBall[10];
+float canShootCounter;
 
 void setup() {
   size(1000, 500);
@@ -16,7 +17,6 @@ void setup() {
 void detectKey() {
   if (key == 's')cannon.moveDown();
   if (key == 'w')cannon.moveUp();
-  if (key == ' ')cannon.fire(); 
 }
 
 void draw() {
@@ -26,9 +26,10 @@ void draw() {
   for(CannonBall a : cannonBalls){
     a.update();
   }
-  if(c <= 5 && canSpawn == true){
+  /*if(c <= 10 && canSpawn == true){
     cannonBalls.add(new CannonBall());
-  }
+  }*/
+  
   
   if (keyPressed)detectKey();
 }

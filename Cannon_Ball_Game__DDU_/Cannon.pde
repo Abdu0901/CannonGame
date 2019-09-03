@@ -19,10 +19,22 @@ class Cannon {
   }
 
   //Fires CannonBalls from the Cannon
-  void fire() {
-    rect(0, 0, 10, 10);
-    println("Shots Fired!");
-  }
+  void fire(){
+    if (keyPressed == true && key == ' '){
+       if (canShoot == true){
+         cannonBalls.add(new CannonBall());
+         canShoot = false;
+         canShootCounter = 0;
+         print("cannon fire");
+       }
+     }
+     if (canShoot == false){
+      canShootCounter++;
+      if (canShootCounter == 5){
+       canShoot = true; 
+      }
+     }
+    }
 
   //Draws Cannon
   void drawCannon() {
