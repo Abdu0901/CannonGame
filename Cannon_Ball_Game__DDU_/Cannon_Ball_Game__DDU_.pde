@@ -4,6 +4,8 @@ int c, e;
 int state = 0;
 boolean canSpawn = true;
 
+CannonBall ball = new CannonBall();
+
 Cannon cannon = new Cannon();
 ArrayList<CannonBall> cannonBalls = new ArrayList<CannonBall>(10);
 //CannonBall[] cannonBalls = new CannonBall[10];
@@ -12,6 +14,7 @@ ArrayList<CannonBall> cannonBalls = new ArrayList<CannonBall>(10);
 void setup() {
   size(1000, 500);
   frameRate(60);
+  ball.ballPos.set(100,500);
 }
 
 //Detects which keys are pressed and proceeds to call the pressed key's function
