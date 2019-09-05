@@ -32,25 +32,16 @@ void draw() {
   for (CannonBall a : cannonBalls) {
     a.update();
   }
-<<<<<<< HEAD
-  
-=======
 
->>>>>>> 8abf0391b524954a4429e1638dc9c58d04937218
   if (c <= 10 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
 
-<<<<<<< HEAD
 
   /*if(c <= 10 && canSpawn == true){
    cannonBalls.add(new CannonBall());
    }*/
 
-
-
-=======
->>>>>>> 8abf0391b524954a4429e1638dc9c58d04937218
   if (c <= 5 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
