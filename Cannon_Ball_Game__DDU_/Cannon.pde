@@ -18,16 +18,20 @@ class Cannon {
     }
   }
 
+void keyPressed(){
+ final int k = keyCode;
+ if (k == ' '){
+  fire(); 
+ }
+}
   //Fires CannonBalls from the Cannon
   void fire(){
-    if (keyPressed == true && key == ' '){
        if (canShoot == true){
          cannonBalls.add(new CannonBall());
          canShoot = false;
          canShootCounter = 0;
          print("cannon fire");
        }
-     }
      if (canShoot == false){
       canShootCounter++;
       if (canShootCounter == 5){
