@@ -18,6 +18,7 @@ class Cannon {
     }
   }
 
+  //Makes sure only one cannon ball is fired at a time
   void keyPressed() {
     final int k = keyCode;
     if (k == ' ') {

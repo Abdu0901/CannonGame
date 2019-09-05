@@ -10,8 +10,6 @@ CannonBall ball = new CannonBall();
 //Cannon Function
 Cannon cannon = new Cannon();
 ArrayList<CannonBall> cannonBalls = new ArrayList<CannonBall>(10);
-//CannonBall[] cannonBalls = new CannonBall[10];
-
 
 //Setup of screen size and framerate
 void setup() {
@@ -38,13 +36,6 @@ void draw() {
   if (c <= 10 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
-
-
-  /*if(c <= 10 && canSpawn == true){
-   cannonBalls.add(new CannonBall());
-   }*/
-
-
 
   if (c <= 5 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
