@@ -18,27 +18,27 @@ class Cannon {
     }
   }
 
-void keyPressed(){
- final int k = keyCode;
- if (k == ' '){
-  fire(); 
- }
-}
-  //Fires CannonBalls from the Cannon
-  void fire(){
-       if (canShoot == true){
-         cannonBalls.add(new CannonBall());
-         canShoot = false;
-         canShootCounter = 0;
-         println("cannon fire");
-       }
-     if (canShoot == false){
-      canShootCounter++;
-      if (canShootCounter == 5){
-       canShoot = true; 
-      }
-     }
+  void keyPressed() {
+    final int k = keyCode;
+    if (k == ' ') {
+      fire();
     }
+  }
+  //Fires CannonBalls from the Cannon
+  void fire() {
+    if (canShoot == true) {
+      cannonBalls.add(new CannonBall());
+      canShoot = false;
+      canShootCounter = 0;
+      println("cannon fire");
+    }
+    if (canShoot == false) {
+      canShootCounter++;
+      if (canShootCounter == 5) {
+        canShoot = true;
+      }
+    }
+  }
 
   //Draws Cannon
   void drawCannon() {
