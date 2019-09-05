@@ -32,13 +32,11 @@ void draw() {
   for (CannonBall a : cannonBalls) {
     a.update();
   }
-<<<<<<< HEAD
   
   if (c <= 10 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
 
-=======
 
   /*if(c <= 10 && canSpawn == true){
    cannonBalls.add(new CannonBall());
@@ -51,7 +49,6 @@ void draw() {
   }
 
 
->>>>>>> 63caf03e427bdd3204ed232b06cca6df3f335727
   if (keyPressed)detectKey();
 }
 
