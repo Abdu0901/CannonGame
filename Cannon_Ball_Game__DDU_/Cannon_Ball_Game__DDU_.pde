@@ -15,17 +15,14 @@ float canShootCounter;
 void setup() {
   size(1000, 500);
   frameRate(60);
-  ball.ballPos.set(100,500);
+  ball.ballPos.set(100, 500);
 }
 
 //Detects which keys are pressed and proceeds to call the pressed key's function
 void detectKey() {
   if (key == 's')cannon.moveDown();
   if (key == 'w')cannon.moveUp();
-<<<<<<< HEAD
-=======
   if (key == ' ')cannon.fire();
->>>>>>> bf013fa41c4b56012ed63f1b17313a086387c58e
 }
 
 void draw() {
@@ -35,18 +32,18 @@ void draw() {
   for (CannonBall a : cannonBalls) {
     a.update();
   }
-<<<<<<< HEAD
+
   /*if(c <= 10 && canSpawn == true){
-    cannonBalls.add(new CannonBall());
-  }*/
-  
-  
-=======
+   cannonBalls.add(new CannonBall());
+   }*/
+
+
+
   if (c <= 5 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
 
->>>>>>> bf013fa41c4b56012ed63f1b17313a086387c58e
+
   if (keyPressed)detectKey();
 }
 
