@@ -3,13 +3,13 @@ public float angle = -PI/4, force = 5;
 int c, e;
 int state = 0;
 boolean canSpawn = true, canShoot = true;
+float canShootCounter;
 
 CannonBall ball = new CannonBall();
 
+//Cannon Function
 Cannon cannon = new Cannon();
 ArrayList<CannonBall> cannonBalls = new ArrayList<CannonBall>(10);
-//CannonBall[] cannonBalls = new CannonBall[10];
-float canShootCounter;
 
 //Setup of screen size and framerate
 void setup() {
@@ -32,11 +32,16 @@ void draw() {
   for (CannonBall a : cannonBalls) {
     a.update();
   }
+<<<<<<< HEAD
   
+=======
+
+>>>>>>> 8abf0391b524954a4429e1638dc9c58d04937218
   if (c <= 10 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }
 
+<<<<<<< HEAD
 
   /*if(c <= 10 && canSpawn == true){
    cannonBalls.add(new CannonBall());
@@ -44,6 +49,8 @@ void draw() {
 
 
 
+=======
+>>>>>>> 8abf0391b524954a4429e1638dc9c58d04937218
   if (c <= 5 && canSpawn == true) {
     cannonBalls.add(new CannonBall());
   }

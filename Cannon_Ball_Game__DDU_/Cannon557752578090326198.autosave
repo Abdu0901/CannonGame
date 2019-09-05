@@ -18,28 +18,23 @@ class Cannon {
     }
   }
 
-  //Makes sure only one cannon ball is fired at a time
-  void keyPressed() {
-    final int k = keyCode;
-    if (k == ' ') {
-      fire();
-    }
-  }
   //Fires CannonBalls from the Cannon
-  void fire() {
-    if (canShoot == true) {
-      cannonBalls.add(new CannonBall());
-      canShoot = false;
-      canShootCounter = 0;
-      println("cannon fire");
-    }
-    if (canShoot == false) {
+  void fire(){
+    if (keyPressed == true && key == ' '){
+       if (canShoot == true){
+         cannonBalls.add(new CannonBall(new PVector(),));
+         canShoot = false;
+         canShootCounter = 0;
+         print("cannon fire");
+       }
+     }
+     if (canShoot == false){
       canShootCounter++;
-      if (canShootCounter == 5) {
-        canShoot = true;
+      if (canShootCounter == 5){
+       canShoot = true; 
       }
+     }
     }
-  }
 
   //Draws Cannon
   void drawCannon() {
