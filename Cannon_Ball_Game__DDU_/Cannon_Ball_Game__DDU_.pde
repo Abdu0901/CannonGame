@@ -5,7 +5,7 @@ int gameScreen = 0;
 boolean canSpawn = true, canShoot = true;
 float canShootCounter;
 
-float ballX, ballY;
+PVector ballPos = new PVector();
 int ballSize = 20;
 float gravity = 0.2;
 float ballSpdVert = 0;
@@ -63,19 +63,6 @@ void draw() {
   a.ballConstrain();
   a.applyHorizonSpd();
   }
-
-  if (c <= 10 && canSpawn == true) {
-    CannonBalls.add(new CannonBall());
-  }
-  
-  /*if(c <= 10 && canSpawn == true){
-   cannonBalls.add(new CannonBall());
-   }*/
-
-  if (c <= 5 && canSpawn == true) {
-    CannonBalls.add(new CannonBall());
-  }
-
 
   if (keyPressed)detectKey();
   }
