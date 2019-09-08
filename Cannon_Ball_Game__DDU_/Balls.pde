@@ -2,22 +2,26 @@ class CannonBall{
   PVector ballPos;
   CannonBall(){
    ballPos = new PVector(30, 440);
-   ballSpdVert = 5;
-   ballSpdHorizon = 5;
+   ballSpdVert = -10;
+   ballSpdHorizon = 10;
   }
   void drawBall(){
  fill(0);
  ellipse(ballPos.x, ballPos.y, ballSize, ballSize);
+ ballPos.y = constrain(ballPos.y, 0, 440);
+ if(ballPos.y >= 440){
+  bounceBot(440); 
+ }
 }
 
 void applyGravity(){
  ballSpdVert += gravity;
- ballPos.y += ballSpdVert;
+ ballPos.y = ballPos.y + ballSpdVert;
  ballSpdVert -= (ballSpdVert * airFriction);
 }
 
 void applyHorizonSpd(){
- ballPos.x += ballSpdHorizon;
+ ballPos.x = ballPos.x + ballSpdHorizon;
  ballSpdHorizon -= (ballSpdHorizon * airFriction);
 }
 

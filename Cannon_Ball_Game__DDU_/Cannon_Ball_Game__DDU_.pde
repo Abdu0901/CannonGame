@@ -1,6 +1,6 @@
 //Cannon Game by Abdullah and Albert
 public float angleC = -PI/4, angleB = -PI/4, force = 5;
-int c, e;
+int c, e, i;
 int gameScreen = 0;
 boolean canSpawn = true, canShoot = true;
 float canShootCounter;
