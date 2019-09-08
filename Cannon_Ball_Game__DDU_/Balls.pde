@@ -1,13 +1,24 @@
 class CannonBall {
   PVector ballPos = new PVector();
   PVector ballVel = new PVector();
-  float angle = PI/4;
+  float angle;
 
   CannonBall() {
     ballPos.x = 30;
     ballPos.y = 440;
   }
+  
+void moveDown() {
+    if (angle < PI/2) {
+      angle += 0.02;
+    }
+  }
 
+  void moveUp() {
+    if (angle > 0) {
+      angle = angle - 0.02;
+    }
+  }
   void update() {
     pushMatrix();
     translate(30, 440);

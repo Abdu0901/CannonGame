@@ -35,7 +35,7 @@ class Cannon {
     }
     if (canShoot == false) {
       canShootCounter++;
-      if (canShootCounter == 5) {
+      if (canShootCounter == 10) {
         canShoot = true;
       }
     }
