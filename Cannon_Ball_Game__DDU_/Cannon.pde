@@ -1,20 +1,20 @@
 class Cannon {
   //Angle of Cannon Barrel
-  float angle;
+  float angleC;
 
   //Moves Cannon Barrel Down
   void moveDown() {
-    if (angle < PI/2) {
-      angle += 0.02;
-      println("Move Down!!" + (-PI/2+angle));
+    if (angleC < PI/2) {
+      angleC += 0.02;
+      println("Move Down!!" + (-PI/2+angleC));
     }
   }
 
   //Moves Cannon Barrel Up
   void moveUp() {
-    if (angle > 0) {
-      angle = angle - 0.02;
-      println("Move Up!!" + (-PI/2+angle));
+    if (angleC > 0) {
+      angleC -= 0.02;
+      println("Move Up!!" + (-PI/2+angleC));
     }
   }
 
@@ -28,7 +28,7 @@ class Cannon {
   //Fires CannonBalls from the Cannon
   void fire() {
     if (canShoot == true) {
-      cannonBalls.add(new CannonBall());
+      CannonBalls.add(new CannonBall());
       canShoot = false;
       canShootCounter = 0;
       println("cannon fire");
@@ -47,7 +47,7 @@ class Cannon {
     fill(200, 0, 0);
     pushMatrix();
     translate(30, 440);
-    rotate(-PI/2+angle);
+    rotate(-PI/2+angleC);
     rect(0, -7, 50, 15);
     popMatrix();
 

@@ -1,30 +1,62 @@
-class CannonBall {
-  PVector ballPos = new PVector();
-  PVector ballVel = new PVector();
-  float angle;
+class CannonBall{
+  PVector ballPos;
+  CannonBall(){
+   ballPos = new PVector(30, 440);
+   ballSpdVert = 5;
+   ballSpdHorizon = 5;
+  }
+  void drawBall(){
+ fill(0);
+ ellipse(ballPos.x, ballPos.y, ballSize, ballSize);
+}
 
-  CannonBall() {
-    ballPos.x = 30;
-    ballPos.y = 440;
-  }
-  
-void moveDown() {
-    if (angle < PI/2) {
-      angle += 0.02;
-    }
-  }
+void applyGravity(){
+ ballSpdVert += gravity;
+ ballPos.y += ballSpdVert;
+ ballSpdVert -= (ballSpdVert * airFriction);
+}
 
-  void moveUp() {
-    if (angle > 0) {
-      angle = angle - 0.02;
-    }
+void applyHorizonSpd(){
+ ballPos.x += ballSpdHorizon;
+ ballSpdHorizon -= (ballSpdHorizon * airFriction);
+}
+
+void bounceBot(float surface){
+  ballPos.y = surface-(ballSize/2);
+  ballSpdVert *= -1;
+  ballSpdVert -= (ballSpdVert * friction);
+}
+
+void bounceTop(float surface){
+  ballPos.y = surface+(ballSize/2);
+  ballSpdVert *= -1;
+  ballSpdVert -= (ballSpdVert * friction);
+}
+
+void bounceL(float surface){
+ ballPos.x =  surface + (ballSize/2);
+ ballSpdHorizon *= -1;
+ ballSpdHorizon -= (ballSpdHorizon * friction);
+}
+
+void bounceR(float surface){
+  ballPos.x = surface - (ballSize/2);
+  ballSpdHorizon *= -1;
+  ballSpdHorizon -= (ballSpdHorizon * friction);
+}
+
+void ballConstrain(){
+  if(ballPos.y+(ballSize/2) > height){
+    bounceBot(height);
   }
-  void update() {
-    pushMatrix();
-    translate(30, 440);
-    rotate(-PI/2+angle);
-    fill(0);
-    rect(0, 0, 10, 10);
-    popMatrix();
+  if(ballPos.y-(ballSize/2) < 0){
+   bounceTop(0); 
   }
+  if(ballPos.x-(ballSize/2) < 0){
+   bounceL(0); 
+  }
+  if(ballPos.x-(ballSize/2) > width){
+   bounceR(width); 
+  }
+}
 }

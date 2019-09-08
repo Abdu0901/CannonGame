@@ -1,31 +1,37 @@
 //Cannon Game by Abdullah and Albert
-public float angle = -PI/4, force = 5;
+public float angleC = -PI/4, angleB = -PI/4, force = 5;
 int c, e;
 int gameScreen = 0;
 boolean canSpawn = true, canShoot = true;
 float canShootCounter;
 
-CannonBall ball = new CannonBall();
+float ballX, ballY;
+int ballSize = 20;
+float gravity = 0.2;
+float ballSpdVert = 0;
+float airFriction = 0.0001;
+float friction = 0.1;
+float ballSpdHorizon = 10;
+
+//CannonBall CannonBalls = new CannonBall();
 
 //Cannon Function
 Cannon cannon = new Cannon();
-ArrayList<CannonBall> cannonBalls = new ArrayList<CannonBall>(10);
+ArrayList<CannonBall> CannonBalls = new ArrayList<CannonBall>();
 
 //Setup of screen size and framerate
 void setup() {
   size(1000, 500);
   frameRate(60);
-  ball.ballPos.set(100, 500);
+  //CannonBalls.ballPos.set(100, 500);
 }
 
 //Detects which keys are pressed and proceeds to call the pressed key's function
 void detectKey() {
   if (key == 's'){
     cannon.moveDown();
-    ball.moveDown(); 
   }if (key == 'w'){
     cannon.moveUp();
-    ball.moveUp();
   }if (key == ' ')cannon.fire();
 }
 
@@ -49,14 +55,17 @@ void draw() {
   void mainScreen(){
     gameScreen = 1;
   drawBackGround();
-  c = cannonBalls.size();
   cannon.drawCannon();
-  for (CannonBall a : cannonBalls) {
-    a.update();
+  c = CannonBalls.size();
+  for(CannonBall a : CannonBalls){
+  a.drawBall();
+  a.applyGravity();
+  a.ballConstrain();
+  a.applyHorizonSpd();
   }
 
   if (c <= 10 && canSpawn == true) {
-    cannonBalls.add(new CannonBall());
+    CannonBalls.add(new CannonBall());
   }
   
   /*if(c <= 10 && canSpawn == true){
@@ -64,7 +73,7 @@ void draw() {
    }*/
 
   if (c <= 5 && canSpawn == true) {
-    cannonBalls.add(new CannonBall());
+    CannonBalls.add(new CannonBall());
   }
 
 
